@@ -145,6 +145,11 @@ const observer = new IntersectionObserver((entries, observer) => {
             if (entry.target.querySelector('.stat-number')) {
                 animateCounters();
             }
+            
+            // Check if it's summary stats section
+            if (entry.target.querySelector('.summary-number')) {
+                animateSummaryCounters();
+            }
 
             observer.unobserve(entry.target);
         }
@@ -182,6 +187,79 @@ function animateCounters() {
         updateCount();
     });
 }
+
+// Animate Summary Stats Counters
+let summaryCoutersAnimated = false;
+function animateSummaryCounters() {
+    if (summaryCoutersAnimated) return;
+    summaryCoutersAnimated = true;
+
+    const counters = document.querySelectorAll('.summary-number');
+    const speed = 200;
+
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const updateCount = () => {
+            const count = +counter.innerText;
+            const inc = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 15);
+            } else {
+                counter.innerText = target;
+                if (target > 100 && target < 200) counter.innerText = target + '+';
+                if (target >= 200) counter.innerText = target + '+';
+            }
+        };
+        updateCount();
+    });
+}
+
+// Achievement Card Expand Functionality
+const expandBtns = document.querySelectorAll('.expand-btn');
+expandBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const card = this.closest('.achievement-detailed-card');
+        const isExpanded = card.classList.contains('expanded');
+        
+        // Close all other cards
+        document.querySelectorAll('.achievement-detailed-card.expanded').forEach(openCard => {
+            if (openCard !== card) {
+                openCard.classList.remove('expanded');
+                const openBtn = openCard.querySelector('.expand-btn');
+                if (openBtn) openBtn.textContent = 'View Details';
+            }
+        });
+        
+        // Toggle current card
+        card.classList.toggle('expanded');
+        this.textContent = isExpanded ? 'View Details' : 'Collapse';
+        
+        // Trigger counter animations when expanded
+        if (card.classList.contains('expanded')) {
+            const metricBars = card.querySelectorAll('.progress-bar');
+            metricBars.forEach(bar => {
+                bar.style.animation = 'none';
+                setTimeout(() => {
+                    bar.style.animation = 'expandProgress 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards';
+                }, 10);
+            });
+        }
+    });
+});
+
+// Close card when clicking outside
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.achievement-detailed-card')) {
+        document.querySelectorAll('.achievement-detailed-card.expanded').forEach(card => {
+            card.classList.remove('expanded');
+            const btn = card.querySelector('.expand-btn');
+            if (btn) btn.textContent = 'View Details';
+        });
+    }
+});
 
 // Active Nav Link Update on Scroll
 window.addEventListener('scroll', () => {
