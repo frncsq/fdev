@@ -163,6 +163,18 @@ ul {
     z-index: 1;
 }
 
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 2.5rem 1rem;
+    }
+}
+
 .alt-bg {
     background-color: var(--alt-bg);
 }
@@ -181,6 +193,18 @@ ul {
     font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
 }
 
 .underline {
@@ -305,8 +329,8 @@ html {
 }
 
 .nav-links a {
-    font-size: 0.60rem;
-    font-weight: 350;
+    font-size: 0.95rem;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
@@ -381,11 +405,23 @@ html {
     margin-bottom: 1rem;
 }
 
+@media (max-width: 480px) {
+    .name {
+        font-size: 2.2rem;
+    }
+}
+
 .title {
     font-size: 1.5rem;
     color: var(--text-muted);
     margin-bottom: 1.5rem;
     font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1rem;
+    }
 }
 
 .divider {
@@ -400,9 +436,28 @@ html {
     max-width: 600px;
 }
 
+@media (max-width: 480px) {
+    .description {
+        font-size: 0.95rem;
+    }
+}
+
 .cta-buttons {
     display: flex;
     gap: 1.5rem;
+}
+
+@media (max-width: 480px) {
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .hero-right {
@@ -416,6 +471,20 @@ html {
     position: relative;
     width: 380px;
     height: 380px;
+}
+
+@media (max-width: 768px) {
+    .image-wrapper {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
 }
 
 .glow-ring {
@@ -562,6 +631,12 @@ html {
     color: var(--text-color);
 }
 
+@media (max-width: 480px) {
+    .about-text h3 {
+        font-size: 1.4rem;
+    }
+}
+
 .about-text p {
     color: var(--text-muted);
     margin-bottom: 1.5rem;
@@ -614,6 +689,19 @@ html {
     gap: 2rem;
     position: relative;
     z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .tech-bento {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-bento {
+        gap: 1rem;
+    }
 }
 
 .bento-card {
@@ -717,6 +805,28 @@ html {
         0 20px 25px rgba(0, 0, 0, 0.5),
         0 0 15px color-mix(in srgb, var(--glow-color, #0ea5e9) 20%, transparent);
     transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .tech-card {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-card {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .tech-card i {
+        font-size: 2.2rem;
+    }
+    
+    .tech-card span {
+        font-size: 0.7rem;
+    }
 }
 
 .tech-card i {
@@ -896,6 +1006,19 @@ html {
     gap: 3rem;
 }
 
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid {
+        gap: 1.5rem;
+    }
+}
+
 .project-card {
     border-radius: 24px;
     transition: var(--transition);
@@ -1056,6 +1179,19 @@ html {
     gap: 2.5rem;
 }
 
+@media (max-width: 768px) {
+    .services-modern-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-modern-grid {
+        gap: 1.5rem;
+    }
+}
+
 .service-glass-card {
     padding: 3rem 2.5rem;
     position: relative;
@@ -1144,6 +1280,27 @@ html {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .achievements-modern-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievements-modern-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .achievement-glass-card {
+        padding: 2rem 1.5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
 }
 
 .achievement-glass-card {
@@ -1261,6 +1418,18 @@ html {
 .contact-wrapper {
     display: flex;
     gap: 4rem;
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-wrapper {
+        gap: 1.5rem;
+    }
 }
 
 .contact-info {
@@ -1466,6 +1635,8 @@ footer {
         align-items: center;
         justify-content: center;
         transition: right 0.4s ease;
+        gap: 2rem;
+        padding-bottom: 2rem;
     }
 
     .nav-links.active {
@@ -1492,6 +1663,131 @@ footer {
 
     body {
         cursor: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        scroll-padding-top: 60px;
+    }
+    
+    #navbar {
+        padding: 1rem 0;
+    }
+    
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    .logo {
+        font-size: 1.4rem;
+    }
+    
+    .nav-links {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .nav-links a {
+        font-size: 1rem;
+    }
+    
+    .hero {
+        min-height: auto;
+        padding: 2rem 1rem;
+        padding-top: 5rem;
+    }
+    
+    .hero-content {
+        gap: 2rem;
+    }
+    
+    .glow-ring {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .greeting {
+        font-size: 0.95rem;
+    }
+    
+    .scroll-indicator {
+        bottom: 20px;
+    }
+    
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .project-info {
+        padding: 1.5rem;
+    }
+    
+    .project-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .project-info p {
+        font-size: 0.9rem;
+    }
+    
+    .bento-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .bento-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .service-glass-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .service-glass-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .service-glass-card p {
+        font-size: 0.95rem;
+    }
+    
+    .contact-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-form {
+        gap: 1rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.85rem;
+        font-size: 1rem;
+    }
+    
+    .submit-btn {
+        font-size: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.85rem;
+    }
+    
+    .testimonial-text {
+        font-size: 1rem;
+    }
+    
+    footer {
+        padding: 2rem 1rem;
+    }
+    
+    .about-content {
+        gap: 2rem;
     }
 }
 
